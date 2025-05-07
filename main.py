@@ -7,7 +7,7 @@ def read_sample(file_path):
         return file.read()
 
 def save_summary(text, model_name):
-    output_file = f"results/samenvatting_{model_name}2.txt"
+    output_file = f"results/samenvatting_{model_name}_5.txt"
     with open(output_file, 'w', encoding='utf-8') as file:
         file.write(text)
     print(f"Samenvatting opgeslagen in {output_file}")
