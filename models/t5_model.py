@@ -9,7 +9,7 @@ class T5Summarizer:
     def summarize(self, text, max_length=150, min_length=40):
         input_text = "Please write a summary of the following article text while capturing key points: " + text.strip().replace("\n", " ")
         inputs = self.tokenizer(input_text, return_tensors="pt", max_length=1024, truncation=True)
-        print(len(inputs))
+        print(f"Aantal tokens: {len(inputs['input_ids'][0])}")
         
         summary_ids = self.model.generate(inputs["input_ids"], 
                                           max_length=max_length, 
