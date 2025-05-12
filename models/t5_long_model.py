@@ -21,6 +21,6 @@ class LongT5Summarizer:
             length_penalty=1.0,
             num_beams=4,
             early_stopping=False,
-            no_repeat_ngram_size=3
+            no_repeat_ngram_size=5
         )
         return self.tokenizer.decode(summary_ids[0], skip_special_tokens=True)
