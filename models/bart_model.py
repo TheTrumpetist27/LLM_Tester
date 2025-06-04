@@ -5,7 +5,7 @@ class BARTSummarizer:
         self.tokenizer = BartTokenizer.from_pretrained(model_name)
         self.model = BartForConditionalGeneration.from_pretrained(model_name)
 
-    def summarize(self, text, max_length=150, min_length=40):
+    def summarize(self, text, max_length=140, min_length=40):
         inputs = self.tokenizer(text, return_tensors="pt", max_length=1024, truncation=True)
         print(f"Aantal tokens: {len(inputs['input_ids'][0])}")
         summary_ids = self.model.generate(inputs["input_ids"], 
